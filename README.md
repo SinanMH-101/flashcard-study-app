@@ -1,54 +1,62 @@
-# React + TypeScript + Vite
+# Flashcard Study App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and aesthetic flashcard study tool built using modern frontend technologies. Users can create, flip, and delete flashcards, with data saved locally in the browser. Designed to explore and demonstrate React, MobX, and TypeScript in a responsive UI layout.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add custom flashcards with front and back text
+- Flip cards to reveal answers with animations
+- Delete flashcards easily
+- Cards are displayed in a responsive horizontal grid layout
+- Landscape card view with cute pastel theme
+- Persistent storage using `localStorage`
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** – Component-based UI
+- **TypeScript** – Strong typing and interface-driven design
+- **MobX** – Application state management
+- **Vite** – Fast development tooling
+- **CSS** – Custom styles with pastel aesthetic
+- **LocalStorage** – Data persistence across refreshes
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
+```
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/flashcard-study-app.git
+cd flashcard-study-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+Open your browser and navigate to:
+
+```
+http://localhost:5173
+```
+
+## To-Do (Future Plans)
+
+- Add category tags and filters
+- Add spaced repetition and study streaks
+- Export/import card sets
+- Light/Dark mode toggle
+- Animated transitions between cards
+
+## Author
+
+Developed by Sinan as a learning project using React, MobX, and TypeScript.
