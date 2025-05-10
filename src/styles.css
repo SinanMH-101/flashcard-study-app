@@ -1,0 +1,120 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.flashcard {
+  perspective: 1000px;
+  position: relative;
+  height: 180px;
+}
+
+.flashcard .card-content {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flashcard.flipped .card-content {
+  transform: rotateY(180deg);
+}
+
+.flashcard .card-content:nth-child(1) {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.flashcard.flipped .card-content:nth-child(1) {
+  transform: rotateY(180deg);
+  z-index: 0;
+}
+
+.flashcard .card-content:nth-child(2) {
+  transform: rotateY(-180deg);
+}
+
+.flashcard.flipped .card-content:nth-child(2) {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.delete {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #ff6b6b;
+  cursor: pointer;
+  z-index: 3;
+}
