@@ -1,6 +1,6 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+  background: #fcefee; /* pastel pink background */
   margin: 0;
   padding: 2rem;
   display: flex;
@@ -10,17 +10,19 @@ body {
 
 .app {
   width: 100%;
-  max-width: 700px;
-  background: white;
+  max-width: 900px;
+  background: #ffffff;
   padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border: 3px dashed #ffd1dc;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #333;
+  color: #ff6f91;
+  font-weight: 600;
 }
 
 .add-form {
@@ -32,42 +34,44 @@ h1 {
 
 input {
   padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  border: 2px solid #ffe3e3;
+  border-radius: 0.75rem;
   font-size: 1rem;
+  background-color: #fffafc;
 }
 
 button {
   padding: 0.75rem;
   border: none;
-  border-radius: 0.5rem;
-  background-color: #007bff;
+  border-radius: 0.75rem;
+  background-color: #ffb3c6;
   color: white;
   font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #ff6f91;
 }
 
 .card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .flashcard {
   perspective: 1000px;
-  position: relative;
   height: 180px;
+  width: 100%;
+  position: relative;
 }
 
 .flashcard .card-content {
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
   border-radius: 1rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -82,7 +86,11 @@ button:hover {
   position: absolute;
   top: 0;
   left: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
 }
+
 
 .flashcard.flipped .card-content {
   transform: rotateY(180deg);
@@ -91,6 +99,7 @@ button:hover {
 .flashcard .card-content:nth-child(1) {
   transform: rotateY(0deg);
   z-index: 2;
+  background-color: #e3f6f5; /* front side: pastel teal */
 }
 
 .flashcard.flipped .card-content:nth-child(1) {
@@ -100,6 +109,7 @@ button:hover {
 
 .flashcard .card-content:nth-child(2) {
   transform: rotateY(-180deg);
+  background-color: #ffdfd3; /* back side: pastel peach */
 }
 
 .flashcard.flipped .card-content:nth-child(2) {
@@ -109,12 +119,14 @@ button:hover {
 
 .delete {
   position: absolute;
-  top: 8px;
-  right: 12px;
+  top: 10px;
+  right: 16px;
   background: none;
   border: none;
-  font-size: 1.2rem;
-  color: #ff6b6b;
+  font-size: 1.4rem;
+  color: #e57373;
+  font-weight: bold;
   cursor: pointer;
   z-index: 3;
 }
+
